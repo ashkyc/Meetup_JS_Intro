@@ -1,0 +1,49 @@
+body {
+  background-color: #b8c1ec;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 100%;
+  transform: rotate(90deg);
+}
+
+h1 {
+  font-family: "Asap", sans-serif;
+  font-size: 60px;
+  color: #232946;
+  margin: 20px;
+}
+
+h2 {
+  color: #121629;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+a {
+  color: #232946;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #eebbc3;
+}
+
+#contact ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+#contact li {
+  display: inline-block;
+  margin-right: 10px;
+}
