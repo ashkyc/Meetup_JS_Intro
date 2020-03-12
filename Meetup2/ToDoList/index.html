@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font-family: "Arial";
+        text-align: center;
+        font-size: 18px;
+      }
+
+      header {
+        background-color: #da4c3f;
+        padding: 20px 0;
+        color: rgb(214, 213, 213);
+        margin-bottom: 50px;
+      }
+
+      .container{
+          width: 20%;
+      }
+
+      .list-container {
+        margin: 30px 0;
+        position: relative;
+      }
+
+      li {
+        text-align: left;
+        margin: 10px 0;
+      }
+
+      .delete-btn{
+        float: right;
+        width: 15px;
+        opacity: 0.5;
+        cursor: pointer;
+      }
+
+      .delete-btn:hover{
+          opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>To Do List</h1>
+      <h5 class="date"></h5>
+    </header>
+    <div class="container">
+        <div>
+            <form class="form-inline">
+                  <div class="form-group">
+                      <input class="form-control" id="new-task" type="text" placeholder="Enter Task" />
+                      <button class="btn btn-danger" id="add-btn" type="submit" >Add</button>
+                  </div>
+            </form>
+          </div>
+      <div class="list-container">
+        <ol class="list">
+          <li>Buy Grocery<img class="delete-btn" src="trash-alt-solid.svg" /></li>
+          <li>File Tax<img class="delete-btn" src="trash-alt-solid.svg" /></li>
+          <li>Walk the dog<img class="delete-btn" src="trash-alt-solid.svg" /></li>
+          <li>Order Dog Food<img class="delete-btn" src="trash-alt-solid.svg" /></li>
+          <li>Fold Laundry<img class="delete-btn" src="trash-alt-solid.svg" /></li>
+        </ol>
+      </div>
+        <h4 class="counter"></h4>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+
+    $(document).ready(function() {
+      const date = new Date();
+      const currentDate = date.toLocaleString();
+      $(".date").html("Current Datetime: " + currentDate);
+
+      $("#add-btn").on('click', addItemToList);
+      $(".delete-btn").on('click', deleteItem)
+    });
+
+    function addItemToList (e){
+        e.preventDefault();
+        const input = $('#new-task').val();
+        $('.list').append(`<li>${input}<img class="delete-btn" src="trash-alt-solid.svg" /></li>`);
+        $(".delete-btn").on('click', deleteItem)
+        $('#new-task').val('');
+    }
+
+    function deleteItem (e){
+        const selectedItem = $(e.target).parent();
+        selectedItem.remove();
+    }
+
+  </script>
+  <!-- <script src="script.js" type="script"></script> -->
+</html>

@@ -1,10 +1,10 @@
-//To start
+####To start
 
 1. Create a html file named index
 2. Create a css file named style
 3. Drop your picture in the same folder
 
-//Instruction
+####Instruction
 
 4. Change the title of your webpage to "My First Website"
 5. Within <body> section, create <header> and <main> sections
@@ -14,7 +14,7 @@
 9. Create the last <div> with an id "contact", use an <ol> (or <ul>) to show the three social media items
 10. Link the social media items to their respective site with an anchor tag <a>
 
-//Styling
+####Styling
 
 11. Link your style.css file to your index.html file
 12. Set some default properties for your webpage, everything should be centered and texts are defaulted to "sans-serif" (hint: add properties to body element)

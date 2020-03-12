@@ -47,3 +47,11 @@ a:hover {
   display: inline-block;
   margin-right: 10px;
 }
+
+#heartIcon {
+  color: red;
+}
+
+#heartIcon:hover {
+  cursor: pointer;
+}

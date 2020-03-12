@@ -10,6 +10,12 @@
       href="https://fonts.googleapis.com/css?family=Asap&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
@@ -45,6 +51,29 @@
           <a href="https://github.com" target="_blank"><li>Github</li></a>
         </ul>
       </div>
+      <div>
+        <i id="heartIcon" class="fa fa-heart"></i>
+        <span id="numberOfLikes"></span> Likes
+      </div>
     </main>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    var num = 0;
+    document.getElementById("numberOfLikes").innerHTML = num;
+
+    $(document).ready(function() {
+      $("#heartIcon").on("click", addLikes);
+    });
+
+    var addLikes = function() {
+      num = num + 1;
+      console.log(num);
+      document.getElementById("numberOfLikes").innerHTML = num;
+    };
+  </script>
 </html>
